@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_mobile/src/utils/theme/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,25 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      // theme: ThemeData(
+      //   // brightness: Brightness.light, primarySwatch: Colors.deepPurple
+      //   // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   // useMaterial3: true,
+      // ),
+      theme: MobileProjectAppTheme.lightTheme,
+      // darkTheme: ThemeData(brightness: Brightness.dark),
+      darkTheme: MobileProjectAppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -77,49 +68,64 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      // backgroundColor: Theme.of(context).focusColor,
       appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
+        title: const Text('.appable/'),
+        leading: const Icon(Icons.ondemand_video),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+        onPressed: () {},
+        child: const Icon(Icons.add_shopping_cart_outlined),
+      ),
+
+      // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+
+      // // Here we take the value from the MyHomePage object that was created by
+      // // the App.build method, and use it to set our appbar title.
+
+      // title: Text(widget.title),
+
+      body: Padding(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        padding: const EdgeInsets.all(20.0),
+        child: ListView(
+          children: [
+            Text(
+              "Heading",
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
+            Text(
+              "Sub-heading",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              "Paragraph",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Elevated Button"),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text("Outlined Button"),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Image(image: AssetImage("assets/images/books.png")),
+            ),
+          ],
+          // mainAxisAlignment: MainAxisAlignment.center,
+          // children: <Widget>[
+          //   const Text(
+          //     'You have pushed the button this many times:',
+          //   ),
+          //   Text(
+          //     '$_counter',
+          //     style: Theme.of(context).textTheme.headlineMedium,
+        ),
+      ),
     );
   }
 }
