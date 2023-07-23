@@ -9,6 +9,7 @@ class MobileProjectAppTextTheme {
     headlineMedium: GoogleFonts.poppins(
       color: Colors.white60,
       fontSize: 24,
+      fontWeight: FontWeight.bold,
     ),
   );
 
@@ -19,6 +20,7 @@ class MobileProjectAppTextTheme {
     headlineMedium: GoogleFonts.poppins(
       color: Colors.black54,
       fontSize: 24,
+      fontWeight: FontWeight.bold,
     ),
   );
 }
