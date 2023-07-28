@@ -5,7 +5,6 @@ import 'package:flutter_project_mobile/src/constants/text_strings.dart';
 import 'package:flutter_project_mobile/src/constants/colors.dart';
 import 'package:flutter_project_mobile/src/features/authentication/controllers/splash_screen_controller.dart';
 
-import 'package:flutter_project_mobile/src/features/authentication/screens/welcome/welcome_screen.dart';
 import 'package:get/get.dart';
 // I stopped onat 9:49
 

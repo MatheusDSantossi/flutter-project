@@ -17,6 +17,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/splash_images/
+    - assets/images/on_boarding_images/
+    - assets/images/welcome_images/
 
 
 dependencies:
@@ -26,6 +29,8 @@ dependencies:
   google_fonts: ^5.1.0
   flutter_native_splash: ^2.3.1
   get: ^4.6.5
+  liquid_swipe: ^3.1.0
+  smooth_page_indicator: ^1.1.0
 
 
 dev_dependencies:

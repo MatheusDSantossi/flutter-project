@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_mobile/src/utils/theme/widget_themes/elevated_button_theme.dart';
+import 'package:flutter_project_mobile/src/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:flutter_project_mobile/src/utils/theme/widget_themes/text_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -9,8 +11,13 @@ class MobileProjectAppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     textTheme: MobileProjectAppTextTheme.lightTextTheme,
+    outlinedButtonTheme:
+        MobileProjectAppOutlinedButtonTheme.lightOutlinedButtonTheme,
     elevatedButtonTheme:
-        ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
+        MobileProjectAppElevatedButtonTheme.lightElevatedButtonTheme,
+
+    // elevatedButtonTheme:
+    //     ElevatedButtonThemeData(style: ElevatedButton.styleFrom()),
     // displayMedium: TextStyle.montserrat(
     //   color: Colors.black87,
     // ),
@@ -30,5 +37,9 @@ class MobileProjectAppTheme {
 
   static ThemeData darkTheme = ThemeData(
       brightness: Brightness.dark,
-      textTheme: MobileProjectAppTextTheme.darkTextTheme);
+      textTheme: MobileProjectAppTextTheme.darkTextTheme,
+      outlinedButtonTheme:
+          MobileProjectAppOutlinedButtonTheme.darkOutlinedButtonTheme,
+      elevatedButtonTheme:
+          MobileProjectAppElevatedButtonTheme.darkElevatedButtonTheme);
 }
