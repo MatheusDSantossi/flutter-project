@@ -16,6 +16,8 @@ class MTextTheme {
         fontSize: 16.0, fontWeight: FontWeight.w600, color: mDarkColor),
     headlineMedium: GoogleFonts.montserrat(
         fontSize: 14.0, fontWeight: FontWeight.w500, color: mDarkColor),
+    headlineSmall: GoogleFonts.montserrat(
+        fontSize: 12.0, fontWeight: FontWeight.w500, color: mDarkColor),
     bodyLarge: GoogleFonts.montserrat(
         fontSize: 14.0, fontWeight: FontWeight.normal, color: mDarkColor),
     bodyMedium: GoogleFonts.montserrat(
@@ -32,6 +34,8 @@ class MTextTheme {
         fontSize: 16.0, fontWeight: FontWeight.w600, color: mWhiteColor),
     headlineMedium: GoogleFonts.montserrat(
         fontSize: 14.0, fontWeight: FontWeight.w500, color: mWhiteColor),
+    headlineSmall: GoogleFonts.montserrat(
+        fontSize: 12.0, fontWeight: FontWeight.w500, color: mWhiteColor),
     bodyLarge: GoogleFonts.montserrat(
         fontSize: 14.0, fontWeight: FontWeight.normal, color: mWhiteColor),
     bodyMedium: GoogleFonts.montserrat(

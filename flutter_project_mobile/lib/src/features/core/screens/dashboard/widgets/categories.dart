@@ -22,8 +22,7 @@ class DashboardCategories extends StatelessWidget {
         itemCount: list.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) => 
-        GestureDetector(
+        itemBuilder: (context, index) => GestureDetector(
           onTap: list[index].onPress,
           child: SizedBox(
             width: 170,
@@ -34,11 +33,13 @@ class DashboardCategories extends StatelessWidget {
                   width: 45,
                   height: 45,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10), color: mDarkColor),
+                      borderRadius: BorderRadius.circular(10),
+                      color: mDarkColor),
                   child: Center(
                     child: Text(
                       list[index].title,
-                      style: txtTheme.headlineSmall?.apply(color: Colors.white),
+                      style: txtTheme.headlineSmall?.apply(
+                          color: const Color.fromRGBO(255, 255, 255, 1)),
                     ),
                   ),
                 ),
@@ -49,7 +50,7 @@ class DashboardCategories extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                       list[index].heading,
+                        list[index].heading,
                         style: txtTheme.headlineSmall,
                         overflow: TextOverflow.ellipsis,
                       ),

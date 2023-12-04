@@ -17,6 +17,10 @@ class DashboardTopMethods extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var brightness = mediaQuery.platformBrightness;
+    final isDark = brightness == Brightness.dark;
+
     return SizedBox(
       height: 200,
       // child: ListView(
@@ -34,7 +38,8 @@ class DashboardTopMethods extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: mCardBgColor),
+                    color: isDark ? mSecondaryColor : mCardBgColor),
+                // color: mCardBgColor),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -59,7 +64,9 @@ class DashboardTopMethods extends StatelessWidget {
                       children: [
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              shape: const CircleBorder()),
+                              shape: const CircleBorder(),
+                              backgroundColor:
+                                  isDark ? mPrimaryColor : mSecondaryColor),
                           onPressed: () {},
                           child: const Icon(Icons.play_arrow),
                         ),
@@ -68,11 +75,11 @@ class DashboardTopMethods extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(list[index].heading,
-                            // Text("3 Sections",
+                                // Text("3 Sections",
                                 style: txtTheme.headlineMedium,
                                 overflow: TextOverflow.ellipsis),
                             Text(list[index].subHeading,
-                            // Text("Manegement Methods",
+                                // Text("Manegement Methods",
                                 style: txtTheme.headlineMedium,
                                 overflow: TextOverflow.ellipsis),
                           ],

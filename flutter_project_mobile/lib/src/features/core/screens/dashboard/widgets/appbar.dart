@@ -10,8 +10,13 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
+    var brightness = mediaQuery.platformBrightness;
+    final isDark = brightness == Brightness.dark;
+
     return AppBar(
-      leading: const Icon(Icons.menu, color: Colors.black),
+      leading: Icon(Icons.menu, color: isDark ? mPrimaryColor : Colors.black),
+      // color: Colors.black),
       title: Text(mAppName, style: Theme.of(context).textTheme.headlineSmall),
       centerTitle: true,
       elevation: 0,
@@ -20,7 +25,8 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
         Container(
           margin: const EdgeInsets.only(right: 20, top: 7),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: mCardBgColor),
+              borderRadius: BorderRadius.circular(10),
+              color: isDark ? mSecondaryColor : mCardBgColor),
           child: IconButton(
               onPressed: () {},
               icon: const Image(image: AssetImage(mUserProfileImage))),
@@ -28,11 +34,11 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
       ],
     );
   }
-  
+
   @override
   // TODO: implement child
   Widget get child => throw UnimplementedError();
-  
+
   @override
   // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(55);
