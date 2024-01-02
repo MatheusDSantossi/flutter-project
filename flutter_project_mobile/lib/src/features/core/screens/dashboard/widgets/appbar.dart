@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile/src/constants/colors.dart';
 import 'package:flutter_project_mobile/src/constants/image_strings.dart';
 import 'package:flutter_project_mobile/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile/src/repository/authentication_repository/authentication_repository.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSize {
   const DashboardAppBar({
@@ -28,7 +29,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
               borderRadius: BorderRadius.circular(10),
               color: isDark ? mSecondaryColor : mCardBgColor),
           child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                AuthenticationRepository.instance.logout();
+              },
               icon: const Image(image: AssetImage(mUserProfileImage))),
         )
       ],

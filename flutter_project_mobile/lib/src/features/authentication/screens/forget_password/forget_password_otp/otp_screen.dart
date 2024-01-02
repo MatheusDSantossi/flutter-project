@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_project_mobile/src/constants/size.dart';
 import 'package:flutter_project_mobile/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile/src/features/authentication/controllers/otp_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OTPScreen extends StatelessWidget {
@@ -9,6 +10,7 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var otp;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(mDefaultSize),
@@ -36,13 +38,19 @@ class OTPScreen extends StatelessWidget {
               filled: true,
               // keyboardType: TextInputType,
               onSubmit: (code) {
-                print("OTP IS ==> $code");
+                otp = code;
+                OTPController.instance.verifyOTP(otp);
+                // print("OTP IS ==> $code");
               },
             ),
             const SizedBox(height: 20.0),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton(onPressed: () {}, child: const Text(mNext)),
+              child: ElevatedButton(
+                  onPressed: () {
+                    OTPController.instance.verifyOTP(otp);
+                  },
+                  child: const Text(mNext)),
             ),
           ],
         ),
