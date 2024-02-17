@@ -15,18 +15,30 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
+  
+  ## -- ICON PACKAGES
+  cupertino_icons: ^1.0.2
+  line_awesome_flutter: ^2.0.0
+  # modern_form_line_awesome_icons: ^2.0.1
+  
   flutter_native_splash: ^2.3.2
+  
+  ## -- STATE MANAGEMENT
   get: ^4.6.6
+
+  ## -- ONBOARDING PACKAGES
   liquid_swipe: ^3.1.0
   smooth_page_indicator: ^1.1.0
+
+  ## -- OTP TEXT FIELD PACKAGE
   flutter_otp_text_field: ^1.1.1
+
+  ## -- FIREBASE PACKAGES
   firebase_core: ^2.24.0
   firebase_auth: ^4.15.2
   cloud_firestore: ^4.13.6
-  # firebase_
+  
   
 
 dev_dependencies:

@@ -39,7 +39,7 @@ const String mWelcomeSubTitle =
 const String mLoginTitle = "Welcome Back!";
 const String mLoginSubTitle = "Make it work, make it right, make it fast.";
 const String mRememberMe = "Rembemer Me?";
-const String mDontHaveAnAccount = "Don't have an Account?";
+const String mDontHaveAnAccount = "Don't have an Account? ";
 
 /** -- Sign Up Screen Text */
 
@@ -61,6 +61,7 @@ const String mForgetPasswordSubTitle =
 const String mResetViaEmail = "Reset via E-mail Verification";
 const String mResetViaPhone = "Reset via Phone Verification";
 const String mNext = "Next";
+const String mLogout = "Logout";
 
 /** -- Forget Password Via Phone Text */
 
@@ -88,3 +89,25 @@ const String mDashboardBannerTitle2 = "PSL";
 const String mDashboardBannerSubTitle = "10 Lessons";
 const String mDashboardButton = "View All";
 const String mDashboardTopManegementMethods = "Top Manegement Methods";
+
+// -- Profile Screen - Text
+
+const String mProfile = "Profile";
+const String mEditProfile = "Edit Profile";
+const String mLogoutDialogHeading = "Logout";
+const String mProfileHeading = "Facial Game";
+const String mProfileSubHeading = "matheus.rezende@ufrpe.br";
+
+// -- Menu
+
+const String mMenu5 = mLogout;
+const String mMenu1 = "Settings";
+const String mMenu2 = "Billing Details";
+const String mMenu3 = "Information";
+const String mMenu4 = "User management";
+
+// -- Update Profile Screen - Text
+
+const String mDelete = "Delete";
+const String mJoined = "Joined ";
+const String mJoinedAt = "31 October 2023";

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/colors.dart';
 import 'package:flutter_project_mobile_v2/src/constants/image_strings.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
-import 'package:flutter_project_mobile_v2/src/repository/authentication_repository/authentication_repository.dart';
+import 'package:flutter_project_mobile_v2/src/features/core/screens/profile/profile_screen.dart';
+import 'package:get/get.dart';
 
 class DashboardAppBar extends StatelessWidget implements PreferredSize {
   const DashboardAppBar({
@@ -29,9 +30,9 @@ class DashboardAppBar extends StatelessWidget implements PreferredSize {
               borderRadius: BorderRadius.circular(10),
               color: isDark ? mSecondaryColor : mCardBgColor),
           child: IconButton(
-              onPressed: () {
-                AuthenticationRepository.instance.logout();
-              },
+              onPressed: () =>
+                  // AuthenticationRepository.instance.logout();
+                  Get.to(() => const ProfileScreen()),
               icon: const Image(image: AssetImage(mUserProfileImage))),
         )
       ],

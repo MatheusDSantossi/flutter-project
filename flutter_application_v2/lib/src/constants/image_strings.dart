@@ -35,3 +35,7 @@ const String mBannerImage1 = "assets/images/dashboard/dash-1.jpg";
 const String mBannerImage2 = "assets/images/dashboard/dash-2.jpg";
 const String mTopManegementImage1 = "assets/images/dashboard/dash-3.jpg";
 const String mTopManegementImage2 = "assets/images/dashboard/dash-4.jpg";
+
+// -- Profile Images
+
+const String mProfileImage = "assets/images/profile/girl_profile_picture.png";
