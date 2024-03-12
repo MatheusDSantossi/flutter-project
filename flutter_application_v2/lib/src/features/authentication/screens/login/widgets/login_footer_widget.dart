@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/image_strings.dart';
 import 'package:flutter_project_mobile_v2/src/constants/size.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/screens/signup/signup_screen.dart';
+import 'package:get/get.dart';
+import 'package:flutter_project_mobile_v2/src/utils/theme/widget_themes/text_theme.dart';
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({
@@ -29,7 +32,9 @@ class LoginFooterWidget extends StatelessWidget {
           height: mFormHeight - 20,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => const SignUpScreen());
+          },
           child: Text.rich(
             TextSpan(
               text: mDontHaveAnAccount,

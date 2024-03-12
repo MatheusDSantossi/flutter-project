@@ -11,9 +11,14 @@ class LoginController extends GetxController {
 
   // Call this Function from Design & it will do the rest
   Future<void> loginUser(String email, String password) async {
-    String? error = await AuthenticationRepository.instance.loginWithEmailAndPassword(email, password);
+    String? error = await AuthenticationRepository.instance
+        .loginWithEmailAndPassword(email, password);
     if (error != null) {
       Get.showSnackbar(GetSnackBar(message: error.toString()));
     }
+    // else {
+    //   // Get.showSnackbar(const GetSnackBar(message: "error.toString()"));
+    //   Get.showSnackbar(const GetSnackBar(message: error.toString()));
+    // }
   }
 }

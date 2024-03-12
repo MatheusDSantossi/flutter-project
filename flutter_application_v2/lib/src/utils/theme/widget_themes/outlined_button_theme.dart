@@ -9,20 +9,24 @@ class MOutlinedButtonTheme {
   /** -- Light Theme */
   static final lightOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      shape: RoundedRectangleBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       foregroundColor: mSecondaryColor,
-      side: BorderSide(color: mSecondaryColor),
-      padding: EdgeInsets.symmetric(vertical: mButtonHeight),
+      side: const BorderSide(color: mSecondaryColor),
+      padding: const EdgeInsets.symmetric(vertical: mButtonHeight),
     ),
   );
 
   /** -- Dark Theme */
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      shape: RoundedRectangleBorder(),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       foregroundColor: mWhiteColor,
-      side: BorderSide(color: mWhiteColor),
-      padding: EdgeInsets.symmetric(vertical: mButtonHeight),
+      side: const BorderSide(color: mWhiteColor),
+      padding: const EdgeInsets.symmetric(vertical: mButtonHeight),
     ),
   );
 }

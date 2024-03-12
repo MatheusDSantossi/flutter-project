@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/size.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/controllers/signup_controller.dart';
-import 'package:flutter_project_mobile_v2/src/features/authentication/screens/forget_password/forget_password_otp/otp_screen.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/models/user_model.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class SignUpFormWidget extends StatelessWidget {
@@ -38,7 +39,8 @@ class SignUpFormWidget extends StatelessWidget {
             TextFormField(
               controller: controller.phoneNo,
               decoration: const InputDecoration(
-                  label: Text(mPhoneNo), prefixIcon: Icon(Icons.numbers)),
+                  label: Text(mPhoneNo),
+                  prefixIcon: Icon(LineAwesomeIcons.phone)),
             ),
             const SizedBox(height: mFormHeight - 20),
             TextFormField(
@@ -52,13 +54,30 @@ class SignUpFormWidget extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    SignUpController.instance.registerUser(
-                        controller.email.text.trim(),
-                        controller.password.text.trim());
+                    // Email authentication
+                    // SignUpController.instance.registerUser(
+                    //     controller.email.text.trim(),
+                    //     controller.password.text.trim());
+
+                    // Phone authentication (has an error)
                     // Get.to(() => Dashboard());
                     // SignUpController.instance
                     //     .phoneAuthentication(controller.phoneNo.text.trim());
                     // Get.to(() => const OTPScreen());
+
+                    /*
+                          ===========
+                          Todo: Step - 2 [User Repository to perform Database Operation]
+                          ===========
+                    */
+                    final user = UserModel(
+                      email: controller.email.text.trim(),
+                      password: controller.password.text.trim(),
+                      fullName: controller.fullName.text.trim(),
+                      phoneNo: controller.phoneNo.text.trim(),
+                    );
+                    SignUpController.instance.createUser(user);
+                    // CREATE AN EMAIL AUTHENTICATION
                   }
                 },
                 child: const Text(mSignup),

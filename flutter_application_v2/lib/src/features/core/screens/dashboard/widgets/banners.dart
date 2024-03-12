@@ -37,7 +37,12 @@ class DashboardBanners extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(child: Image(image: AssetImage(mBookmarkIcon))),
+                    Flexible(
+                        child: Image(
+                      image: AssetImage(mBookmarkIcon),
+                      width: 30,
+                      height: 30,
+                    )),
                     Flexible(child: Image(image: AssetImage(mBannerImage1))),
                   ],
                 ),
@@ -76,7 +81,11 @@ class DashboardBanners extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Flexible(
-                            child: Image(image: AssetImage(mBookmarkIcon))),
+                            child: Image(
+                          image: AssetImage(mBookmarkIcon),
+                          width: 30,
+                          height: 30,
+                        )),
                         Flexible(
                             child: Image(image: AssetImage(mBannerImage2))),
                       ],

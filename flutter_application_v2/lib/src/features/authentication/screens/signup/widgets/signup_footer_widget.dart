@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/image_strings.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/screens/login/login_screen.dart';
+import 'package:get/get.dart';
 
 class SignUpFooterWidget extends StatelessWidget {
   const SignUpFooterWidget({
@@ -24,7 +26,9 @@ class SignUpFooterWidget extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => const LoginScreen());
+          },
           child: Text.rich(
             TextSpan(
               children: [
@@ -34,6 +38,7 @@ class SignUpFooterWidget extends StatelessWidget {
                 ),
                 const TextSpan(
                   text: mLogin,
+                  style: TextStyle(color: Colors.blue),
                 ),
               ],
             ),

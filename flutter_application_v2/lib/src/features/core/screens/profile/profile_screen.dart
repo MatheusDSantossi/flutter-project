@@ -6,10 +6,12 @@ import 'package:flutter_project_mobile_v2/src/constants/colors.dart';
 import 'package:flutter_project_mobile_v2/src/constants/image_strings.dart';
 import 'package:flutter_project_mobile_v2/src/constants/size.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/controllers/login_controller.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/login/login_screen.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/on_boarding_screens/on_boarding_screen.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter_project_mobile_v2/src/features/core/screens/dashboard/dashboard.dart';
+import 'package:flutter_project_mobile_v2/src/features/core/screens/profile/all_users.dart';
 import 'package:flutter_project_mobile_v2/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:flutter_project_mobile_v2/src/features/core/screens/profile/widgets/profile_menu.dart';
 import 'package:flutter_project_mobile_v2/src/repository/authentication_repository/authentication_repository.dart';
@@ -21,11 +23,13 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final login_controller = Get.put(LoginController());
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-            onPressed: () {}, icon: const Icon(LineAwesomeIcons.angle_left)),
+            onPressed: () => Get.back(),
+            icon: const Icon(LineAwesomeIcons.angle_left)),
         title: Text(
           mProfile,
           style: Theme.of(context).textTheme.headlineSmall,
@@ -76,7 +80,9 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Text(mProfileHeading,
                   style: Theme.of(context).textTheme.headlineSmall),
-              Text(mProfileSubHeading,
+              Text(
+                  // LoginController.instance.email.text.trim(),
+                  mProfileSubHeading,
                   style: Theme.of(context).textTheme.headlineMedium),
               const SizedBox(height: 20),
               SizedBox(
@@ -108,13 +114,16 @@ class ProfileScreen extends StatelessWidget {
                 icon: LineAwesomeIcons.wallet,
                 onPress: () {},
               ), //icon: LineAwesomeIcons.cog,),
-              const Divider(color: Colors.grey),
+
               const SizedBox(height: 10),
               ProfileMenuWidget(
                 title: "User Management",
                 icon: LineAwesomeIcons.user_check,
-                onPress: () {},
+                onPress: () {
+                  Get.to(() => const UserManegementScreen());
+                },
               ), //icon: LineAwesomeIcons.cog,),
+              const Divider(color: Colors.grey),
               ProfileMenuWidget(
                 title: "Information",
                 icon: LineAwesomeIcons.info,

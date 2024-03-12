@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_mobile_v2/src/utils/theme/widget_themes/appbar_theme.dart';
 import 'package:flutter_project_mobile_v2/src/utils/theme/widget_themes/elevated_button_theme.dart';
 import 'package:flutter_project_mobile_v2/src/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:flutter_project_mobile_v2/src/utils/theme/widget_themes/text_field_theme.dart';
@@ -11,7 +12,7 @@ class MAppTheme {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     textTheme: MTextTheme.lightTextTheme,
-    // appBarTheme: MAppBarTheme.lightAppBarTheme,
+    appBarTheme: MAppBarTheme.lightAppBarTheme,
     outlinedButtonTheme: MOutlinedButtonTheme.lightOutlinedButtonTheme,
     elevatedButtonTheme: MElevatedButtonTheme.lightElevatedButtonTheme,
     inputDecorationTheme: MTextFormFieldTheme.lightInputDecorationTheme,
@@ -33,7 +34,7 @@ class MAppTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     textTheme: MTextTheme.darkTextTheme,
-    // appBarTheme: MAppBarTheme.darkAppBarTheme,
+    appBarTheme: MAppBarTheme.darkAppBarTheme,
     outlinedButtonTheme: MOutlinedButtonTheme.darkOutlinedButtonTheme,
     elevatedButtonTheme: MElevatedButtonTheme.darkElevatedButtonTheme,
     inputDecorationTheme: MTextFormFieldTheme.darkInputDecorationTheme,

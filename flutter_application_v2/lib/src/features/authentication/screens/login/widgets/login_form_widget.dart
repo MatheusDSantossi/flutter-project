@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/size.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/controllers/login_controller.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/forget_password/forget_password_options/forget_password_btn_widget.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/forget_password/forget_password_options/forget_password_model_bottom_sheet.dart';
 import 'package:flutter_project_mobile_v2/src/features/core/screens/dashboard/dashboard.dart';
+import 'package:flutter_project_mobile_v2/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:get/get.dart';
 
 class LoginForm extends StatelessWidget {
@@ -13,27 +15,33 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+    final _formKey = GlobalKey<FormState>();
+
     return Form(
+      key: _formKey,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: mFormHeight - 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              controller: controller.email,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.person_outline_outlined),
                 labelText: mEmail,
                 hintText: mEmail,
-                border: OutlineInputBorder(),
+                // border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: mFormHeight),
             TextFormField(
+              controller: controller.password,
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.fingerprint),
                 labelText: mPassword,
                 hintText: mPassword,
-                border: OutlineInputBorder(),
+                // border: OutlineInputBorder(),
                 suffixIcon: IconButton(
                   onPressed: null,
                   icon: Icon(Icons.remove_red_eye_sharp),
@@ -55,7 +63,16 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const Dashboard()),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    LoginController.instance.loginUser(
+                        controller.email.text.trim(),
+                        controller.password.text.trim());
+                    // Get.to(() => const Dashboard());
+                  } else {
+                    Get.showSnackbar(GetSnackBar(message: "error to form"));
+                  }
+                },
                 // onPressed: () {
                 //   Get.to(const Dashboard());
                 // },

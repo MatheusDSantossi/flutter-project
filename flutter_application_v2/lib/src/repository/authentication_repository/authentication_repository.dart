@@ -25,7 +25,7 @@ class AuthenticationRepository extends GetxController {
         : Get.offAll(() => const Dashboard());
   }
 
-  // FUNC
+  // Phone Authentication
   Future<void> phoneAuthentication(String phoneNo) async {
     await _auth.verifyPhoneNumber(
       phoneNumber: phoneNo,
@@ -43,7 +43,6 @@ class AuthenticationRepository extends GetxController {
           Get.snackbar('Error', 'The provided phone number is not valid.');
         } else {
           Get.snackbar('Error', 'Something went wrong. Try again! ${e}');
-          
         }
       },
     );
@@ -85,7 +84,8 @@ class AuthenticationRepository extends GetxController {
       return null;
     } on FirebaseAuthException catch (e) {
       final ex = SignUpWithEmailAndPasswordFailure.code(e.code);
-      print('FIREBASE AUTH EXCEPTION - ${ex.message}');
+      // print('FIREBASE AUTH EXCEPTION - ${ex.message}');
+      Get.showSnackbar(GetSnackBar(message: ex.message));
       throw ex;
       // return ex.message; // Return error message
     } catch (_) {

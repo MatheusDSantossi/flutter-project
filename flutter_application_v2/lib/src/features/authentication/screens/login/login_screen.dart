@@ -4,6 +4,7 @@ import 'package:flutter_project_mobile_v2/src/features/authentication/screens/lo
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/login/widgets/login_footer_widget.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/login/widgets/login_form_widget.dart';
 
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
