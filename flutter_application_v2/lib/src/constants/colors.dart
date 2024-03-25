@@ -15,3 +15,7 @@ const mDarkColor = Color(0xFF000000);
 const mOnBoardingPage1Color = Colors.white;
 const mOnBoardingPage2Color = Color(0xfffddcdf);
 const mOnBoardingPage3Color = Color(0xffffdcdb);
+
+const mGoogleColor = Colors.blue;
+const mGoogleForegroundColor = Colors.lightBlueAccent;
+const mFacebookColor = Colors.black;

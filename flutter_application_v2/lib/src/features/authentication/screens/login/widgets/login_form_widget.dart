@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project_mobile_v2/src/constants/size.dart';
 import 'package:flutter_project_mobile_v2/src/constants/text_strings.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/controllers/login_controller.dart';
-import 'package:flutter_project_mobile_v2/src/features/authentication/screens/forget_password/forget_password_options/forget_password_btn_widget.dart';
 import 'package:flutter_project_mobile_v2/src/features/authentication/screens/forget_password/forget_password_options/forget_password_model_bottom_sheet.dart';
-import 'package:flutter_project_mobile_v2/src/features/core/screens/dashboard/dashboard.dart';
-import 'package:flutter_project_mobile_v2/src/repository/authentication_repository/authentication_repository.dart';
+import 'package:flutter_project_mobile_v2/src/features/authentication/screens/signup/widgets/primaryButton.dart';
 import 'package:get/get.dart';
 
 class LoginForm extends StatelessWidget {
@@ -16,10 +14,12 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
-    final _formKey = GlobalKey<FormState>();
+    // final _formKey = GlobalKey<FormState>();
+    // final formKey = Get.put(LoginController().loginFormKey);
 
     return Form(
-      key: _formKey,
+      // key: _formKey,
+      key: controller.loginFormKey,
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: mFormHeight - 10),
         child: Column(
@@ -60,25 +60,51 @@ class LoginForm extends StatelessWidget {
                 child: const Text(mForgetPassword),
               ),
             ),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    LoginController.instance.loginUser(
-                        controller.email.text.trim(),
-                        controller.password.text.trim());
-                    // Get.to(() => const Dashboard());
-                  } else {
-                    Get.showSnackbar(GetSnackBar(message: "error to form"));
-                  }
-                },
-                // onPressed: () {
-                //   Get.to(const Dashboard());
-                // },
-                child: const Text(mLogin),
+            Obx(
+              () => MPrimaryButton(
+                isLoading: controller.isLoading.value ? true : false,
+                text: mLogin.tr,
+                onPressed: controller.isFacebookLoading.value ||
+                        controller.isGoogleLoading.value
+                    ? () {}
+                    : () {
+                        if (controller.loginFormKey.currentState!.validate()) {
+                          
+                          LoginController.instance.login();
+
+                    
+                        } else {
+                          Get.showSnackbar(
+                              const GetSnackBar(message: "error to form"));
+                        }
+                      },
               ),
             ),
+            // SizedBox(
+            //   width: double.infinity,
+            //   child: ElevatedButton(
+            //     onPressed: () {
+            //       // if (_formKey.currentState!.validate()) {
+            //       if (controller.loginFormKey.currentState!.validate()) {
+            //         // Get.showSnackbar(
+            //         //     const GetSnackBar(message: "no error to form"));
+            //         LoginController.instance.login();
+
+            //         // LoginController.instance.loginUser(
+            //         //     controller.email.text.trim(),
+            //         //     controller.password.text.trim());
+            //         // // Get.to(() => const Dashboard());
+            //       } else {
+            //         Get.showSnackbar(
+            //             const GetSnackBar(message: "error to form"));
+            //       }
+            //     },
+            //     // onPressed: () {
+            //     //   Get.to(const Dashboard());
+            //     // },
+            //     child: const Text(mLogin),
+            //   ),
+            // ),
           ],
         ),
       ),

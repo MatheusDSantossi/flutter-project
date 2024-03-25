@@ -9,6 +9,23 @@ const String mPassword = "Password";
 const String mForgetPassword = "Forget Password?";
 const String mSignInWithGoogle = "Sign-in with Google";
 
+// -- Validation --
+const String mEmailCannotEmpty = "Email cannot be empty";
+const String mInvalidEmailFormat = "Invalid email format";
+const String mNoRecordFound = "No record found";
+
+// -- SnackBar --
+const String mAlert = "Alert";
+const String mOhSnap = "Oh Snap";
+const String mEmailSent = "Hurray!!! Email is on its way.";
+const String mCongratulations = "Congratulations";
+const String mEmailLinkToResetPassword = "Email Link to Reset Password";
+const String mAccountCreateVerifyEmail = "Account Create Verify Email";
+
+const String mConnectWith = "Connect With";
+const String mGoogle = "Google";
+const String mFacebook = "Facebook";
+
 /** -- Splash Screen Text -- */
 const String mAppName = "Management Time";
 const String mAppTagLine = "Managing your time, easily and fast";
@@ -78,6 +95,17 @@ const String mForgetMailSubtitle =
 const String mOtpTitle = "CO\nDE";
 const String mOtpSubTitle = "Verification";
 const String mOtpMessage = "Enter the verification code sent at ";
+
+// -- Email Verification
+
+const String mEmailVerificationTitle = "Verify your email address";
+const String mEmailVerificationSubTitle =
+    """We have just send email verification link on your email. Please check email and click on that link to verify your Email address.
+ 
+If not auto redirect after verification, click on the Continue button.""";
+const String mContinue = "Continue";
+const String mResendEmaiLink = "Resend Email";
+const String mBackToLogin = "Back to login";
 
 // -- Dashboard Screen - Text
 

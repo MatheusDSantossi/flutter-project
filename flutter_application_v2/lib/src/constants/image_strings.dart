@@ -20,7 +20,7 @@ const String mWelcomeScreenImage =
 /** -- Login Images */
 
 const String mGoogleLogoImage = "assets/logo/google_logo.png";
-
+const String mFacebookLogoImage = "assets/logo/facebook_logo.png";
 /** -- 
  * Forget Password Images */
 
